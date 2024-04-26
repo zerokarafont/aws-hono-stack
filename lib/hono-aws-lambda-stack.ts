@@ -62,6 +62,16 @@ export class HonoAwsLambdaStack extends cdk.Stack {
       },
       bundling: {
         externalModules: ['aws-sdk-lib'],
+        nodeModules: [],
+        // forceDockerBundling: true,
+        commandHooks: {
+          afterBundling: (inputDir: string, outputDir: string): string[] => [
+            // `cp -r ${inputDir}/lambda/fonts ${outputDir}`,
+            // `cp -r ${inputDir}/lambda/images ${outputDir}`
+          ],
+          beforeBundling: (inputDir: string, outputDir: string): string[] => [],
+          beforeInstall: (inputDir: string, outputDir: string): string[] => [],
+        },
       }
     });
 

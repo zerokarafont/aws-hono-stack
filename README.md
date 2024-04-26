@@ -14,7 +14,8 @@
 ## 部署
 - 为了连接DocumentDB, 需要配置lambda的VPC
   + 增加超时时间和内存
-- 每次部署完需要手动将documentdb global-bundle.pem文件, 传到线上的lambda目录里
+- [x](每次部署完需要手动将documentdb global-bundle.pem文件, 传到线上的lambda目录里)
+  + 已解决, 请配置afterBundling
 - 如果s3 upload超时需要配置, vpc endpoint, 选择s3 Gateway
 - dynamodb生产环境需要配置 vpc endpoint
 # Welcome to your CDK TypeScript project
